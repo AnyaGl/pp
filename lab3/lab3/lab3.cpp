@@ -1,7 +1,6 @@
 ﻿#include <ctime>
 #include <fstream>
 #include <iostream>
-#include <mutex>
 #include <string>
 #include <tchar.h>
 #include <vector>
@@ -34,6 +33,8 @@ DWORD WINAPI ThreadProc(CONST LPVOID lpParam)
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	int x;
+	std::cin >> x;
 	startTime = clock();
 	if (argc != 2)
 	{
