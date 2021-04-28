@@ -11,4 +11,5 @@ void LogFileWriter::SaveData(List* data)
 	{
 		m_output << data->Pop() << std::endl;
 	}
+	m_output.flush();
 }

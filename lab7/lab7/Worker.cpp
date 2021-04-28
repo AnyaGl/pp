@@ -10,6 +10,10 @@ DWORD WINAPI Worker::ThreadProc(CONST LPVOID lpParam)
 
 bool Worker::ExecuteTask(ITask* task)
 {
+	if (IsBusy())
+	{
+		return false;
+	}
 	if (m_thread = CreateThread(NULL, 0, &ThreadProc, task, CREATE_SUSPENDED, NULL))
 	{
 		ResumeThread(m_thread);
